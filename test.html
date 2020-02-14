@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>change demo</title>
+  <style>
+  div {
+    color: red;
+  }
+  </style>
+  <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+</head>
+<body>
+ 
+<select id="sweets" name="sweets">
+  <option value="asia">Asia</option>
+  <option>Candy</option>
+  <option>Taffy</option>
+  <option>Caramel</option>
+  <option>Fudge</option>
+  <option>Cookie</option>
+</select>
+<div></div>
+ 
+<script>
+$( "select" )
+  .change(function () {
+    var str = "";
+    $( "select option:selected" ).each(function() {
+        if($("#sweets").val()  === 'asia' ){
+            str = $( this ).text() + " ";
+            $( "div" ).text( str );
+        }
+    });
+    
+  })
+  .change();
+</script>
+ 
+</body>
+</html>

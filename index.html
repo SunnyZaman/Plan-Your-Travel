@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Hello Bulma!</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <link rel="stylesheet" href="/style.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <script src="myscripts.js"></script>
+</head>
+
+<body>
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+            <div class="navbar-brand">
+                    <div class="logo">
+                        <img src="/img/logo.png">
+                    </div>
+        
+                    <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false"
+                        data-target="navbarBasicExample">
+                        <span aria-hidden="true"></span>
+                        <span aria-hidden="true"></span>
+                        <span aria-hidden="true"></span>
+                    </a>
+                </div>
+
+        <div id="navbarBasicExample" class="navbar-menu">
+            <div class="navbar-start">
+                <a class="navbar-item">
+                    Home
+                </a>
+
+                <a class="navbar-item">
+                    About Us
+                </a>
+
+                <a class="navbar-item">
+                    Contact Us
+                </a>
+            </div>
+            <div class="navbar-end">
+                <a class="navbar-item">
+                    Shopping Cart
+                </a>
+            </div>
+        </div>
+    </nav>
+    <section class="section">
+        <div class="container">
+            <div class="columns">
+                <div class="column">
+                    <div class="field">
+                        <label class="label">Continents:</label>
+                        <div class="select is-fullwidth">
+                            <select name="continents[name]">
+                                <option value="" disabled selected hidden></option>
+                                <option value="asia">Asia</option>
+                                <option value="africa">Africa</option>
+                                <option value="europe">Europe</option>
+                                <option value="northamerica">North America</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="field" id="countries-asia">
+                        <label class="label">Countries:</label>
+                        <div class="select is-fullwidth">
+                            <select name="countries[name]">
+                                <option value="" disabled selected hidden></option>
+                                <option value="china">China</option>
+                                <option value="southkorea">South Korea</option>
+                                <option value="japan">Japan</option>
+                                <option value="singapore">Singapore</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="field" id="attractions">
+                        <label class="label">Attractions:</label>
+                        <div class="select is-fullwidth">
+                            <select name="attraction[toronto]">
+                                <option value="" disabled selected hidden></option>
+                                <option value="distillery">Distillery District</option>
+                                <option value="cntower">CN TOwer</option>
+                                <option value="ripleys">Ripley's Aquarium</option>
+                                <option value="kensington">Kensington Market</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="column">
+                    <h3 class="heading">Or, Choose by Popular Places</h3>
+                    <div class="field">
+                        <label class="label">Popular Places:</label>
+                        <div class="select is-fullwidth">
+                            <select name="attractions[name]">
+                                <option value="" disabled selected hidden></option>
+                                <option value="empirestate">Empire State Building</option>
+                                <option value="eiffeltower">Eiffel Tower</option>
+                                <option value="bigben">Big Ben</option>
+                                <option value="greatwallofchina">Great Wall of China</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <br>
+        <div class="columns is-mobile is-centered">
+            <div class="box">
+                    <div class="media-content">
+                            <img src="/img/eee.png" alt="">
+                    </div>
+            </div>
+        </div>
+        <div class="columns">
+            <div class="column">
+                    <div class="box">
+                            <div class="media-content">
+                                    <img src="/img/eee.png" alt="">
+                                    <p class="content is-size-3 is-marginless">wow so nice</p>
+                                    <p class="content is-size-7">123 Queen Street, Toronto</p>
+                                    <a href="">Read More</a>
+                            </div>
+                    </div>
+            </div>
+            <div class="column">
+                    <div class="box">
+                            <div class="media-content">
+                                    <img src="/img/eee.png" alt="">
+                                    <p class="content is-size-3 is-marginless">wow so nice</p>
+                                    <p class="content is-size-7">123 Queen Street, Toronto</p>
+                                    <a href="">Read More</a>
+                            </div>
+                    </div>
+            </div>
+            <div class="column">
+                    <div class="box">
+                            <div class="media-content">
+                                    <img src="/img/eee.png" alt="">
+                                    <p class="content is-size-3 is-marginless">wow so nice</p>
+                                    <p class="content is-size-7">123 Queen Street, Toronto</p>
+                                    <a href="">Read More</a>
+                            </div>
+                    </div>
+            </div>
+            
+            
+        </div>
+
+    </section>
+
+</body>
+
+</html>

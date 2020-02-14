@@ -1,0 +1,8 @@
+.yellow{
+    color: #ffd300;
+}
+.logo {
+    background: url(img/logo.png) no-repeat center center;
+    background-size: cover;
+    width: 152px
+  }
