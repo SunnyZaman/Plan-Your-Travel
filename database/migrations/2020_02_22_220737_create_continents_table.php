@@ -14,8 +14,8 @@ class CreateContinentsTable extends Migration
     public function up()
     {
         Schema::create('continents', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->string('continent');
+            $table->engine = 'InnoDB'; // <- For string foreign keys
+            $table->string('continent')->primary();
             $table->timestamps();
         });
         DB::table('continents')->insert(array(
@@ -55,3 +55,5 @@ class CreateContinentsTable extends Migration
         Schema::dropIfExists('continents');
     }
 }
+
+

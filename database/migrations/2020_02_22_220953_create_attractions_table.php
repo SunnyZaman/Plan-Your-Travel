@@ -16,8 +16,8 @@ class CreateAttractionsTable extends Migration
         Schema::create('attractions', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('attraction');
-            $table->bigInteger('country_id')->unsigned();
-            $table->foreign('country_id')->references('id')->on('countries');
+            $table->string('country_id');
+            $table->foreign('country_id')->references('country')->on('countries');
             $table->binary('attraction_image')->nullable();
             $table->binary('other_place_1_image')->nullable();
             $table->binary('other_place_2_image')->nullable();
@@ -26,123 +26,123 @@ class CreateAttractionsTable extends Migration
         });
         DB::table('attractions')->insert(array(
             'attraction' => 'Great Sphinx of Giza',
-            'country_id' => 1,
+            'country_id' => 'Egypt',
             'created_at' => date('Y-m-d H:m:s'),
             'updated_at' => date('Y-m-d H:m:s')
         ));
         DB::table('attractions')->insert(array(
             'attraction' => 'Abu Simbel Temples',
-            'country_id' => 1,
+            'country_id' => 'Egypt',
             'created_at' => date('Y-m-d H:m:s'),
             'updated_at' => date('Y-m-d H:m:s')
         ));
         DB::table('attractions')->insert(array(
             'attraction' => 'Hwange National Park',
-            'country_id' => 2,
+            'country_id' => 'Zimbabwe',
             'created_at' => date('Y-m-d H:m:s'),
             'updated_at' => date('Y-m-d H:m:s')
         ));
         DB::table('attractions')->insert(array(
             'attraction' => 'Victoria Falls National Park',
-            'country_id' => 2,
+            'country_id' => 'Zimbabwe',
             'created_at' => date('Y-m-d H:m:s'),
             'updated_at' => date('Y-m-d H:m:s')
         ));
 
         DB::table('attractions')->insert(array(
             'attraction' => 'Taj Mahal',
-            'country_id' => 3,
+            'country_id' => 'India',
             'created_at' => date('Y-m-d H:m:s'),
             'updated_at' => date('Y-m-d H:m:s')
         ));
         DB::table('attractions')->insert(array(
             'attraction' => 'Amber Palace',
-            'country_id' => 3,
+            'country_id' => 'India',
             'created_at' => date('Y-m-d H:m:s'),
             'updated_at' => date('Y-m-d H:m:s')
         ));
         DB::table('attractions')->insert(array(
             'attraction' => 'Mount Fuji',
-            'country_id' => 4,
+            'country_id' => 'Japan',
             'created_at' => date('Y-m-d H:m:s'),
             'updated_at' => date('Y-m-d H:m:s')
         ));
         DB::table('attractions')->insert(array(
             'attraction' => 'Tokyo Skytree',
-            'country_id' => 4,
+            'country_id' => 'Japan',
             'created_at' => date('Y-m-d H:m:s'),
             'updated_at' => date('Y-m-d H:m:s')
         ));
         DB::table('attractions')->insert(array(
             'attraction' => 'Eiffel Tower',
-            'country_id' => 5,
+            'country_id' => 'France',
             'created_at' => date('Y-m-d H:m:s'),
             'updated_at' => date('Y-m-d H:m:s')
         ));
         DB::table('attractions')->insert(array(
             'attraction' => 'Louvre Museum',
-            'country_id' => 5,
+            'country_id' => 'France',
             'created_at' => date('Y-m-d H:m:s'),
             'updated_at' => date('Y-m-d H:m:s')
         ));
         DB::table('attractions')->insert(array(
             'attraction' => 'Leaning Tower of Pisa',
-            'country_id' => 6,
+            'country_id' => 'Italy',
             'created_at' => date('Y-m-d H:m:s'),
             'updated_at' => date('Y-m-d H:m:s')
         ));
         DB::table('attractions')->insert(array(
             'attraction' => 'Roman Forum',
-            'country_id' => 6,
+            'country_id' => 'Italy',
             'created_at' => date('Y-m-d H:m:s'),
             'updated_at' => date('Y-m-d H:m:s')
         ));
 
         DB::table('attractions')->insert(array(
             'attraction' => 'CN Tower',
-            'country_id' => 7,
+            'country_id' => 'Canada',
             'created_at' => date('Y-m-d H:m:s'),
             'updated_at' => date('Y-m-d H:m:s')
         ));
         DB::table('attractions')->insert(array(
             'attraction' => 'Niagara Falls',
-            'country_id' => 7,
+            'country_id' => 'Canada',
             'created_at' => date('Y-m-d H:m:s'),
             'updated_at' => date('Y-m-d H:m:s')
         ));
         DB::table('attractions')->insert(array(
             'attraction' => 'Grand Canyon National Park',
-            'country_id' => 8,
+            'country_id' => 'United States of America',
             'created_at' => date('Y-m-d H:m:s'),
             'updated_at' => date('Y-m-d H:m:s')
         ));
         DB::table('attractions')->insert(array(
             'attraction' => 'Statue of Liberty National Monument',
-            'country_id' => 8,
+            'country_id' => 'United States of America',
             'created_at' => date('Y-m-d H:m:s'),
             'updated_at' => date('Y-m-d H:m:s')
         ));
         DB::table('attractions')->insert(array(
             'attraction' => 'Christ the Redeemer',
-            'country_id' => 9,
+            'country_id' => 'Brazil',
             'created_at' => date('Y-m-d H:m:s'),
             'updated_at' => date('Y-m-d H:m:s')
         ));
         DB::table('attractions')->insert(array(
             'attraction' => 'Tijuca National Park',
-            'country_id' => 9,
+            'country_id' => 'Brazil',
             'created_at' => date('Y-m-d H:m:s'),
             'updated_at' => date('Y-m-d H:m:s')
         ));
         DB::table('attractions')->insert(array(
             'attraction' => 'Casapueblo',
-            'country_id' => 10,
+            'country_id' => 'Uruguay',
             'created_at' => date('Y-m-d H:m:s'),
             'updated_at' => date('Y-m-d H:m:s')
         ));
         DB::table('attractions')->insert(array(
             'attraction' => 'La Mano de Punta del Este',
-            'country_id' => 10,
+            'country_id' => 'Uruguay',
             'created_at' => date('Y-m-d H:m:s'),
             'updated_at' => date('Y-m-d H:m:s')
         ));
@@ -158,6 +158,7 @@ class CreateAttractionsTable extends Migration
         Schema::dropIfExists('attractions');
     }
 }
+
 
 
 

@@ -15,7 +15,11 @@ Auth::routes();
 Route::group(['middleware' => ['auth']], function() {
     // my routes
     Route::get('/', function () {
-        return view('home');
+        $continent_list = DB::table('continents')
+        ->get();
+        return view('home')->with('continent_list', $continent_list);
     });
     Route::get('/home', 'HomeController@index')->name('home');
+    Route::post('home/fetch', 'HomeController@fetch');
+
 });
