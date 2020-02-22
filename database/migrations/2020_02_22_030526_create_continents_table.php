@@ -18,6 +18,31 @@ class CreateContinentsTable extends Migration
             $table->string('continent');
             $table->timestamps();
         });
+        DB::table('continents')->insert(array(
+            'continent' => 'Africa',
+            'created_at' => date('Y-m-d H:m:s'),
+            'updated_at' => date('Y-m-d H:m:s')
+        ));
+        DB::table('continents')->insert(array(
+            'continent' => 'Asia',
+            'created_at' => date('Y-m-d H:m:s'),
+            'updated_at' => date('Y-m-d H:m:s')
+        ));
+        DB::table('continents')->insert(array(
+            'continent' => 'Europe',
+            'created_at' => date('Y-m-d H:m:s'),
+            'updated_at' => date('Y-m-d H:m:s')
+        ));
+        DB::table('continents')->insert(array(
+            'continent' => 'North America',
+            'created_at' => date('Y-m-d H:m:s'),
+            'updated_at' => date('Y-m-d H:m:s')
+        ));
+        DB::table('continents')->insert(array(
+            'continent' => 'South America',
+            'created_at' => date('Y-m-d H:m:s'),
+            'updated_at' => date('Y-m-d H:m:s')
+        ));
     }
 
     /**
