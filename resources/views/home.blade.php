@@ -41,12 +41,11 @@
             </select>
         </div>
 </div>
-@foreach($place_images as $images)
+<div class="imageContainer">
     <div class="row justify-content-center m-20">
         <div class="col-md-6">
             <div class="card">
-                <div class="card-body">
-                    Image
+                <div class="card-body img-med" id="img-med">
                 </div>
                 <div class="card-footer">
                     <h3>Place</h3>
@@ -62,8 +61,7 @@
     <div class="row justify-content-center m-20">
         <div class="col-md-4">
             <div class="card">
-                <div class="card-body">
-                    Image
+                <div class="card-body img-sm" id="img1-sm">
                 </div>
                 <div class="card-footer">
                     <h3>Place</h3>
@@ -77,8 +75,7 @@
         </div>
         <div class="col-md-4">
             <div class="card">
-                <div class="card-body">
-                    Image
+                <div class="card-body img-sm" id="img2-sm">
                 </div>
                 <div class="card-footer">
                     <h3>Place</h3>
@@ -92,8 +89,7 @@
         </div>
         <div class="col-md-4">
             <div class="card">
-                <div class="card-body">
-                    Image
+                <div class="card-body img-sm" id="img3-sm">
                 </div>
                 <div class="card-footer">
                     <h3>Place</h3>
@@ -106,7 +102,7 @@
             </div>
         </div>
     </div>
-    @endforeach
+    </div>
 
 </div>
 

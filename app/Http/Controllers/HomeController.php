@@ -33,7 +33,9 @@ class HomeController extends Controller
                     ['place' => 'Great Sphinx of Giza']
                     ]
                   ));
-        return view('home')->with(['continent_list'=> $continent_list, 'popular_places'=>$popular_places]);
+        return view('home')->with(
+          ['continent_list'=> $continent_list, 
+          'popular_places'=>$popular_places]);
     }
     function fetch(Request $request)
        {
