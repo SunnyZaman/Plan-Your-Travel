@@ -47,13 +47,14 @@
             <div class="card">
                 <div class="card-body img-med" id="img-med">
                 </div>
-                <div class="card-footer">
+                <div class="card-footer image-medium">
                     <h3>Place</h3>
                 <div class="float-left">
                     <p>Location</p>
                 </div>
                     <div class="float-right">
-                    Read more</div>
+                        <a> Read more</a>
+                        </div>
                 </div>
             </div>
         </div>
@@ -63,13 +64,14 @@
             <div class="card">
                 <div class="card-body img-sm" id="img1-sm">
                 </div>
-                <div class="card-footer">
+                <div class="card-footer image1-small">
                     <h3>Place</h3>
                 <div class="float-left">
                     <p>Location</p>
                 </div>
                     <div class="float-right">
-                    Read more</div>
+                    <a> Read more</a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -77,13 +79,14 @@
             <div class="card">
                 <div class="card-body img-sm" id="img2-sm">
                 </div>
-                <div class="card-footer">
+                <div class="card-footer image2-small">
                     <h3>Place</h3>
                 <div class="float-left">
                     <p>Location</p>
                 </div>
                     <div class="float-right">
-                    Read more</div>
+                    <a> Read more</a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -91,13 +94,14 @@
             <div class="card">
                 <div class="card-body img-sm" id="img3-sm">
                 </div>
-                <div class="card-footer">
+                <div class="card-footer image3-small">
                     <h3>Place</h3>
                 <div class="float-left">
                     <p>Location</p>
                 </div>
                     <div class="float-right">
-                    Read more</div>
+                    <a> Read more</a>
+                </div>
                 </div>
             </div>
         </div>
