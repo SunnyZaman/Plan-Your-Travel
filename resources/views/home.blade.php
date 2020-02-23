@@ -41,6 +41,7 @@
             </select>
         </div>
 </div>
+@foreach($place_images as $images)
     <div class="row justify-content-center m-20">
         <div class="col-md-6">
             <div class="card">
@@ -105,6 +106,7 @@
             </div>
         </div>
     </div>
+    @endforeach
 
 </div>
 
