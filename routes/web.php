@@ -17,7 +17,15 @@ Route::group(['middleware' => ['auth']], function() {
     Route::get('/', function () {
         $continent_list = DB::table('continents')
         ->get();
-        return view('home')->with('continent_list', $continent_list);
+        $popular_places = json_decode(json_encode([
+            ['place' => 'CN Tower'],
+            ['place' => 'Leaning Tower of Pisa'],
+            ['place' => 'Eiffel Tower'],
+            ['place' => 'Taj Mahal'],
+            ['place' => 'Great Sphinx of Giza']
+            ]
+          ));
+return view('home')->with(['continent_list'=> $continent_list, 'popular_places'=>$popular_places]);
     });
     Route::get('/home', 'HomeController@index')->name('home');
     Route::post('home/fetch', 'HomeController@fetch');

@@ -31,6 +31,7 @@ $(document).ready(function () {
                 method: "POST",
                 data: { select: select + "_id", value: value, _token: _token, dependent: dependent, table: table },
                 success: function (result) {
+                    console.log(result)
                     $('#' + dependent).html(result);
                 },
                 error: function (response) {

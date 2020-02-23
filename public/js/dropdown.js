@@ -137,6 +137,7 @@ $(document).ready(function () {
           table: table
         },
         success: function success(result) {
+          console.log(result);
           $('#' + dependent).html(result);
         },
         error: function error(response) {

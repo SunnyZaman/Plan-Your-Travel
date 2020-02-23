@@ -9,10 +9,10 @@
         <div class="form-group col-xs-12 col-md-4">
         <label for="continent">Continent:</label>
             <select name="continent" id="continent" class="form-control dynamic" data-dependent="country">
-     <option value="">Select Continent</option>
-     @foreach($continent_list as $continent)
-     <option value="{{ $continent->continent}}">{{ $continent->continent }}</option>
-     @endforeach
+        <option value="">Select Continent</option>
+        @foreach($continent_list as $continent)
+        <option value="{{ $continent->continent}}">{{ $continent->continent }}</option>
+        @endforeach
     </select>
         </div>
         <div id="countryContainer" class="form-group col-xs-12 col-md-4">
@@ -22,8 +22,8 @@
             </select>
         </div>
         <div id="attractionContainer" class="form-group col-xs-12 col-md-4">
-        <label for="attractionSelect">Attraction:</label>
-            <select  name="attraction" id="attraction" class="form-control" id="attractionSelect">
+        <label for="attraction">Attraction:</label>
+            <select  name="attraction" id="attraction" class="form-control">
             <option value="">Select Attraction</option>
             </select>
         </div>
@@ -32,9 +32,12 @@
     </div>
     <div class="form-row">
         <div class="form-group col-xs-12 col-md-4">
-        <label for="popularPlacesSelect">Popular Places:</label>
-            <select class="form-control" id="popularPlacesSelect">
-                <option>Default select</option>
+        <label for="popularPlaces">Popular Places:</label>
+            <select name="popularPlaces" id="popularPlaces" class="form-control">
+                 <option value="">Select Popular Place</option>
+                    @foreach($popular_places as $places)
+                <option value="{{ $places->place}}">{{ $places->place }}</option>
+                    @endforeach
             </select>
         </div>
     <!-- <div class="row justify-content-center">
