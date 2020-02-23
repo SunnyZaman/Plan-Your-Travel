@@ -41,4 +41,22 @@ $(document).ready(function () {
             })
         }
     });
+    $('#popularPlaces').change(function () {
+        if ($(this).val() !== '') {
+            var value = $(this).val();
+            var _token = $('input[name="_token"]').val();
+            $.ajax({
+                url: "/home/placeData",
+                method: "POST",
+                data: { value: value, _token: _token},
+                success: function (result) {
+                    console.log(result)
+                    // $('#' + dependent).html(result);
+                },
+                error: function (response) {
+                    console.log(response);
+                }
+            })
+        }
+    });
 });

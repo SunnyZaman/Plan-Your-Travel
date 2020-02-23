@@ -25,9 +25,9 @@ Route::group(['middleware' => ['auth']], function() {
             ['place' => 'Great Sphinx of Giza']
             ]
           ));
-return view('home')->with(['continent_list'=> $continent_list, 'popular_places'=>$popular_places]);
+        return view('home')->with(['continent_list'=> $continent_list, 'popular_places'=>$popular_places]);
     });
     Route::get('/home', 'HomeController@index')->name('home');
     Route::post('home/fetch', 'HomeController@fetch');
-
+    Route::post('home/placeData', 'HomeController@placeData');
 });

@@ -51,4 +51,12 @@ class HomeController extends Controller
         }
         echo $output;
        }
+
+       function placeData(Request $request){
+        $value = $request->get('value');
+        $data = DB::table('attractions')
+        ->where('attraction',$value)
+        ->get();
+        echo $data;
+       }
 }
