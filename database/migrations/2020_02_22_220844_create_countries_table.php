@@ -14,70 +14,70 @@ class CreateCountriesTable extends Migration
     public function up()
     {
         Schema::create('countries', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->string('country');
-            $table->bigInteger('continent_id')->unsigned();
-            $table->foreign('continent_id')->references('id')->on('continents');
+            $table->engine = 'InnoDB'; // <- For string foreign keys
+            $table->string('country')->primary();
+            $table->string('continent_id');
+            $table->foreign('continent_id')->references('continent')->on('continents');
             $table->timestamps();
         });
         DB::table('countries')->insert(array(
             'country' => 'Egypt',
-            'continent_id' => 1,
+            'continent_id' => 'Africa',
             'created_at' => date('Y-m-d H:m:s'),
             'updated_at' => date('Y-m-d H:m:s')
         ));
         DB::table('countries')->insert(array(
             'country' => 'Zimbabwe',
-            'continent_id' => 1,
+            'continent_id' => 'Africa',
             'created_at' => date('Y-m-d H:m:s'),
             'updated_at' => date('Y-m-d H:m:s')
         ));
 
         DB::table('countries')->insert(array(
             'country' => 'India',
-            'continent_id' => 2,
+            'continent_id' => 'Asia',
             'created_at' => date('Y-m-d H:m:s'),
             'updated_at' => date('Y-m-d H:m:s')
         ));
         DB::table('countries')->insert(array(
             'country' => 'Japan',
-            'continent_id' => 2,
+            'continent_id' => 'Asia',
             'created_at' => date('Y-m-d H:m:s'),
             'updated_at' => date('Y-m-d H:m:s')
         ));
         DB::table('countries')->insert(array(
             'country' => 'France',
-            'continent_id' => 3,
+            'continent_id' => 'Europe',
             'created_at' => date('Y-m-d H:m:s'),
             'updated_at' => date('Y-m-d H:m:s')
         ));
         DB::table('countries')->insert(array(
             'country' => 'Italy',
-            'continent_id' => 3,
+            'continent_id' => 'Europe',
             'created_at' => date('Y-m-d H:m:s'),
             'updated_at' => date('Y-m-d H:m:s')
         ));
         DB::table('countries')->insert(array(
             'country' => 'Canada',
-            'continent_id' => 4,
+            'continent_id' => 'North America',
             'created_at' => date('Y-m-d H:m:s'),
             'updated_at' => date('Y-m-d H:m:s')
         ));
         DB::table('countries')->insert(array(
             'country' => 'United States of America',
-            'continent_id' => 4,
+            'continent_id' => 'North America',
             'created_at' => date('Y-m-d H:m:s'),
             'updated_at' => date('Y-m-d H:m:s')
         ));
         DB::table('countries')->insert(array(
             'country' => 'Brazil',
-            'continent_id' => 5,
+            'continent_id' => 'South America',
             'created_at' => date('Y-m-d H:m:s'),
             'updated_at' => date('Y-m-d H:m:s')
         ));
         DB::table('countries')->insert(array(
             'country' => 'Uruguay',
-            'continent_id' => 5,
+            'continent_id' => 'South America',
             'created_at' => date('Y-m-d H:m:s'),
             'updated_at' => date('Y-m-d H:m:s')
         ));
@@ -93,5 +93,8 @@ class CreateCountriesTable extends Migration
         Schema::dropIfExists('countries');
     }
 }
+
+
+
 
 
