@@ -188,6 +188,8 @@ $(document).ready(function () {
   function mediumImage(data) {
     var json = JSON.parse(data);
     console.log(json);
+    var id = json.title.replace(/ /g, "_");
+    console.log(id);
     $('#img-med').append($('<img/>').attr({
       'src': 'uploads/' + json.image,
       'id': "image-med"
@@ -198,7 +200,7 @@ $(document).ready(function () {
     );
     $(".image-medium h3").html(json.title);
     $(".image-medium p").html(json.location);
-    $(".image-medium a").attr("href", "http://www.google.com");
+    $(".image-medium a").attr("href", "/place/" + id);
   }
 
   function smallImage1(data) {
