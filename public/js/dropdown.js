@@ -147,7 +147,7 @@ $(document).ready(function () {
       });
     }
   });
-  $('#popularPlaces').change(function () {
+  $('#popularPlaces, #attraction').change(function () {
     if ($(this).val() !== '') {
       clearPlaceData();
       var value = $(this).val();
@@ -165,11 +165,10 @@ $(document).ready(function () {
           var result = JSON.parse(val);
           var data = result[0];
           console.log(data);
-          mediumImage(data.attraction_image);
-          smallImage1(data.close_place_1_image);
-          smallImage2(data.close_place_2_image);
-          smallImage3(data.close_place_3_image); // $('#' + dependent).html(result);
-
+          mediumImage(data.attraction_data);
+          smallImage1(data.close_place_1_data);
+          smallImage2(data.close_place_2_data);
+          smallImage3(data.close_place_3_data);
           $(".imageContainer").show();
         },
         error: function error(response) {
@@ -186,48 +185,67 @@ $(document).ready(function () {
     $('#img3-sm').empty();
   }
 
-  function mediumImage(img) {
+  function mediumImage(data) {
+    var json = JSON.parse(data);
+    console.log(json);
+    var id = json.title.replace(/ /g, "_");
+    console.log(id);
     $('#img-med').append($('<img/>').attr({
-      'src': 'uploads/' + img,
+      'src': 'uploads/' + json.image,
       'id': "image-med"
     }).attr({
       'width': "100%",
       'height': "100%"
     }) //   .addClass("")
     );
+    $(".image-medium h3").html(json.title);
+    $(".image-medium p").html(json.location);
+    $(".image-medium a").attr("href", "/place/" + id);
   }
 
-  function smallImage1(img) {
+  function smallImage1(data) {
+    var json = JSON.parse(data);
+    console.log(json);
     $('#img1-sm').append($('<img/>').attr({
-      'src': 'uploads/' + img,
+      'src': 'uploads/' + json.image,
       'id': "image-med"
     }).attr({
       'width': "100%",
       'height': "100%"
-    }) //   .addClass("")
-    );
+    }));
+    $(".image1-small h3").html(json.title);
+    $(".image1-small p").html(json.location);
+    $(".image1-small a").attr("href", "http://www.google.com");
   }
 
-  function smallImage2(img) {
+  function smallImage2(data) {
+    var json = JSON.parse(data);
+    console.log(json);
     $('#img2-sm').append($('<img/>').attr({
-      'src': 'uploads/' + img,
+      'src': 'uploads/' + json.image,
       'id': "image-med"
     }).attr({
       'width': "100%",
       'height': "100%"
-    }) //   .addClass("")
-    );
+    }));
+    $(".image2-small h3").html(json.title);
+    $(".image2-small p").html(json.location);
+    $(".image2-small a").attr("href", "");
   }
 
-  function smallImage3(img) {
+  function smallImage3(data) {
+    var json = JSON.parse(data);
+    console.log(json);
     $('#img3-sm').append($('<img/>').attr({
-      'src': 'uploads/' + img,
+      'src': 'uploads/' + json.image,
       'id': "image-med"
     }).attr({
       'width': "100%",
       'height': "100%"
-    }) //   .addClass("")
-    );
+    }));
+    $(".image3-small h3").html(json.title);
+    $(".image3-small p").html(json.location);
+    $(".image3-small a").attr("href", "");
   }
 });
 

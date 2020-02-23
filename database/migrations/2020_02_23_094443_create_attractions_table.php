@@ -28,8 +28,8 @@ class CreateAttractionsTable extends Migration
             'attraction' => 'Great Sphinx of Giza',
             'country_id' => 'Egypt',
             'attraction_data' => '{"title":"Great Sphinx of Giza", "location": "Great Sphinx of Giza, Al Giza Desert, Giza Governorate, Egypt", "image":"sphinx1.jpg"}',
-            'close_place_1_data' => '{"title":"Abu Simbel Temples", "location":"Abu Simbel Temples, Abu Simbel, Aswan Governorate, Egypt", "image":"abuSimbelTemples1.jpg"}"}',
-            'close_place_2_data' => '{"title":"Pyramids of Queens", "location": "Pyramids of Queens, Al Giza Desert, Giza Governorate, Egypt", "image":"pyramidQueens.jpg"}"}',
+            'close_place_1_data' => '{"title":"Abu Simbel Temples", "location":"Abu Simbel Temples, Abu Simbel, Aswan Governorate, Egypt", "image":"abuSimbelTemples1.jpg"}',
+            'close_place_2_data' => '{"title":"Pyramids of Queens", "location": "Pyramids of Queens, Al Giza Desert, Giza Governorate, Egypt", "image":"pyramidQueens.jpg"}',
             'close_place_3_data' => '{"title":"Valley Temple of Menkaure", "location": "Valley Temple of Menkaure, Al Giza Desert, Giza Governorate, Egypt", "image":"templeMenkaure.jpg"}',
             'created_at' => date('Y-m-d H:m:s'),
             'updated_at' => date('Y-m-d H:m:s')
@@ -37,9 +37,9 @@ class CreateAttractionsTable extends Migration
         DB::table('attractions')->insert(array(
             'attraction' => 'Abu Simbel Temples',
             'country_id' => 'Egypt',
-            'attraction_data' => '{"title":"Abu Simbel Temples", "location":"Abu Simbel Temples, Abu Simbel, Aswan Governorate, Egypt", "image":"abuSimbelTemples1.jpg"}"}',
+            'attraction_data' => '{"title":"Abu Simbel Temples", "location":"Abu Simbel Temples, Abu Simbel, Aswan Governorate, Egypt", "image":"abuSimbelTemples1.jpg"}',
             'close_place_1_data' => '{"title":"Great Sphinx of Giza", "location": "Great Sphinx of Giza, Al Giza Desert, Giza Governorate, Egypt", "image":"sphinx1.jpg"}',
-            'close_place_2_data' => '{"title":"Pyramids of Queens", "location": "Pyramids of Queens, Al Giza Desert, Giza Governorate, Egypt", "image":"pyramidQueens.jpg"}"}',
+            'close_place_2_data' => '{"title":"Pyramids of Queens", "location": "Pyramids of Queens, Al Giza Desert, Giza Governorate, Egypt", "image":"pyramidQueens.jpg"}',
             'close_place_3_data' => '{"title":"Valley Temple of Menkaure", "location": "Valley Temple of Menkaure, Al Giza Desert, Giza Governorate, Egypt", "image":"templeMenkaure.jpg"}',
             'created_at' => date('Y-m-d H:m:s'),
             'updated_at' => date('Y-m-d H:m:s')
