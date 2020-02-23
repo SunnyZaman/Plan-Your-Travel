@@ -40,24 +40,70 @@
                     @endforeach
             </select>
         </div>
-    <!-- <div class="row justify-content-center">
-        <div class="col-md-8">
+</div>
+<div class="imageContainer">
+    <div class="row justify-content-center m-20">
+        <div class="col-md-6">
             <div class="card">
-                <div class="card-header">Dashboard</div>
-
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
-
-                    You are logged in!
+                <div class="card-body img-med" id="img-med">
+                </div>
+                <div class="card-footer">
+                    <h3>Place</h3>
+                <div class="float-left">
+                    <p>Location</p>
+                </div>
+                    <div class="float-right">
+                    Read more</div>
                 </div>
             </div>
         </div>
-    </div> -->
-</div>
+    </div>
+    <div class="row justify-content-center m-20">
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body img-sm" id="img1-sm">
+                </div>
+                <div class="card-footer">
+                    <h3>Place</h3>
+                <div class="float-left">
+                    <p>Location</p>
+                </div>
+                    <div class="float-right">
+                    Read more</div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body img-sm" id="img2-sm">
+                </div>
+                <div class="card-footer">
+                    <h3>Place</h3>
+                <div class="float-left">
+                    <p>Location</p>
+                </div>
+                    <div class="float-right">
+                    Read more</div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body img-sm" id="img3-sm">
+                </div>
+                <div class="card-footer">
+                    <h3>Place</h3>
+                <div class="float-left">
+                    <p>Location</p>
+                </div>
+                    <div class="float-right">
+                    Read more</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
 
+</div>
 
 @endsection

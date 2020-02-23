@@ -16783,3 +16783,15 @@ readers do not read off random characters that represent icons */
   font-weight: 900;
 }
 
+.m-20 {
+  margin-bottom: 20px !important;
+}
+
+.img-med {
+  height: 350px !important;
+}
+
+.img-sm {
+  height: 250px !important;
+}
+

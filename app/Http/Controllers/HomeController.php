@@ -33,7 +33,9 @@ class HomeController extends Controller
                     ['place' => 'Great Sphinx of Giza']
                     ]
                   ));
-        return view('home')->with(['continent_list'=> $continent_list, 'popular_places'=>$popular_places]);
+        return view('home')->with(
+          ['continent_list'=> $continent_list, 
+          'popular_places'=>$popular_places]);
     }
     function fetch(Request $request)
        {
@@ -50,5 +52,13 @@ class HomeController extends Controller
          $output .= '<option value="'.$row->$dependent.'">'.$row->$dependent.'</option>';
         }
         echo $output;
+       }
+
+       function placeData(Request $request){
+        $value = $request->get('value');
+        $data = DB::table('attractions')
+        ->where('attraction',$value)
+        ->get();
+        echo $data;
        }
 }

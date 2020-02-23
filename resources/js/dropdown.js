@@ -2,7 +2,7 @@ $(document).ready(function () {
     //Hide dropdowns
     $("#countryContainer").hide();
     $("#attractionContainer").hide();
-
+    $(".imageContainer").hide();
     $('.dynamic').change(function () {
         if ($(this).val() !== '') {
             var select = $(this).attr("id");
@@ -41,4 +41,78 @@ $(document).ready(function () {
             })
         }
     });
+    $('#popularPlaces').change(function () {
+        if ($(this).val() !== '') {
+            clearPlaceData();
+            var value = $(this).val();
+            var _token = $('input[name="_token"]').val();
+            $.ajax({
+                url: "/home/placeData",
+                method: "POST",
+                data: { value: value, _token: _token},
+                success: function (val) {
+                    var result = JSON.parse(val);
+                    var data = result[0];
+                    console.log(data);
+                    mediumImage(data.attraction_image);
+                    smallImage1(data.close_place_1_image);
+                    smallImage2(data.close_place_2_image);
+                    smallImage3(data.close_place_3_image);
+
+                    // $('#' + dependent).html(result);
+                    
+                $(".imageContainer").show();
+                },
+                error: function (response) {
+                    console.log(response);
+                }
+            })
+        }
+    });
+    function clearPlaceData(){
+        $('#img-med').empty();
+        $('#img1-sm').empty();
+        $('#img2-sm').empty();
+        $('#img3-sm').empty();
+    }
+    function mediumImage(img){
+        $('#img-med').append(
+            $('<img/>')
+              .attr({'src': 'uploads/'+img,
+              'id': "image-med"})
+              .attr({'width': "100%",
+              'height':"100%"})
+            //   .addClass("")
+          );
+    }
+    function smallImage1(img){
+        $('#img1-sm').append(
+            $('<img/>')
+              .attr({'src': 'uploads/'+img,
+              'id': "image-med"})
+              .attr({'width': "100%",
+              'height':"100%"})
+            //   .addClass("")
+          );
+    }
+    function smallImage2(img){
+        $('#img2-sm').append(
+            $('<img/>')
+              .attr({'src': 'uploads/'+img,
+              'id': "image-med"})
+              .attr({'width': "100%",
+              'height':"100%"})
+            //   .addClass("")
+          );
+    }
+    function smallImage3(img){
+        $('#img3-sm').append(
+            $('<img/>')
+              .attr({'src': 'uploads/'+img,
+              'id': "image-med"})
+              .attr({'width': "100%",
+              'height':"100%"})
+            //   .addClass("")
+          );
+    }
 });
