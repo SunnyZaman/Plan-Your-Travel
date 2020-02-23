@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use DB;
 class PlaceController extends Controller
 {
     /**
@@ -21,7 +21,10 @@ class PlaceController extends Controller
      */
     public function index($id)
     {
-        $imageName = str_replace("_"," ",$id);
-        return view('place')->with(['imageName'=>$imageName]);
+        $place_title = str_replace("_"," ",$id);
+        $selected_place = DB::table('selected_places')
+        ->where('selected_place',$place_title)
+            ->get();
+        return view('place')->with(['selected_place'=>$selected_place]);
     }
 }

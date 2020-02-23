@@ -76,7 +76,6 @@ $(document).ready(function () {
         var json = JSON.parse(data);
         console.log(json);
         var id = json.title.replace(/ /g, "_");
-        console.log(id);
         $('#img-med').append(
             $('<img/>')
               .attr({'src': 'uploads/'+json.image,
@@ -91,8 +90,7 @@ $(document).ready(function () {
     }
     function smallImage1(data){
         var json = JSON.parse(data);
-        console.log(json);
-
+        var id = json.title.replace(/ /g, "_");
         $('#img1-sm').append(
             $('<img/>')
               .attr({'src': 'uploads/'+json.image,
@@ -102,12 +100,10 @@ $(document).ready(function () {
           );
           $(".image1-small h3").html(json.title);
           $(".image1-small p").html(json.location);
-          $(".image1-small a").attr("href","http://www.google.com");
+          $(".image1-small a").attr("href","/place/"+id);
     }
     function smallImage2(data){
         var json = JSON.parse(data);
-        console.log(json);
-
         $('#img2-sm').append(
             $('<img/>')
               .attr({'src': 'uploads/'+json.image,
@@ -122,8 +118,6 @@ $(document).ready(function () {
     }
     function smallImage3(data){
         var json = JSON.parse(data);
-        console.log(json);
-
         $('#img3-sm').append(
             $('<img/>')
               .attr({'src': 'uploads/'+json.image,
