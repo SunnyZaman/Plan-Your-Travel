@@ -62,7 +62,7 @@
                             <a  class="nav-link" href="{{ url('/') }}" role="button">Contact</a>
                         </li>
                         <li class="nav-item">
-                        <a  class="nav-link" href="{{ url('/') }}">
+                        <a  class="nav-link" href="{{ route('shop') }}">
                         <i class="fa fa-shopping-cart"></i></a>
                         </li>
                             <li class="nav-item dropdown">
