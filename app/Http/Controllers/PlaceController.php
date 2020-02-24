@@ -25,6 +25,9 @@ class PlaceController extends Controller
         $selected_place = DB::table('selected_places')
         ->where('selected_place',$place_title)
             ->get();
-        return view('place')->with(['selected_place'=>$selected_place]);
+        $reviews = DB::table('reviews')
+            ->where('selected_place',$place_title)
+                ->get();
+        return view('place')->with(['selected_place'=>$selected_place, 'reviews'=>$reviews]);
     }
 }

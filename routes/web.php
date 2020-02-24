@@ -33,5 +33,6 @@ Route::group(['middleware' => ['auth']], function() {
     Route::post('home/fetch', 'HomeController@fetch');
     Route::post('home/placeData', 'HomeController@placeData');
     Route::get('/place/{id}', 'PlaceController@index')->name('place');
+    Route::post('review/store', 'ReviewController@store');
 
 });
