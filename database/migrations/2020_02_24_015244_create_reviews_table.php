@@ -18,6 +18,8 @@ class CreateReviewsTable extends Migration
             $table->string('selected_place');
             $table->foreign('selected_place')->references('selected_place')->on('selected_places');
             $table->string('title');
+            $table->string('reviewer_name');
+            $table->string('reviewer_email');
             $table->integer('rating');
             $table->text('description');
             $table->string('review_date');

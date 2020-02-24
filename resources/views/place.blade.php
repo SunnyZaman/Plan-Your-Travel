@@ -36,16 +36,32 @@
     </div>
      @endforeach
 <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#reviewModal">
+<div class="row m-20">
+<div class="col-xs-12 col-md-12">
+<button type="button" class="btn btn-primary float-right" data-toggle="modal" data-target="#reviewModal">
   Write a Review
 </button>
+</div>
+</div>
 <!-- Show Reviews -->
+@foreach($reviews as $review)
 <div class="form-row">
-        <div class="form-group col-xs-12 col-md-4">
+        <div class="form-group col-xs-12 col-md-12">
         <div class="card">
+            <div class="p-20">
+        @for ($i = 1; $i <= $review->rating; $i++)
+        <span class="fa fa-star checked m-20"></span>
+    @endfor
+    <p class="card-subtitle mb-2"> {{$review->review_date}} </p>
+    <p class="card-subtitle mb-2"> {{$review->reviewer_name}} - {{$review->reviewer_email}} </p>
+    <h4 class="card-subtitle mb-2"> {{$review->title}}</h4>
+            <p>{{$review->description}}</p>
+        </div>
         </div>
         </div>
     </div>
+    @endforeach
+
 <!-- Modal -->
 <div class="modal fade" id="reviewModal" tabindex="-1" role="dialog" aria-labelledby="writeReview" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
