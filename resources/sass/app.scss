@@ -1,0 +1,30 @@
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+
+// Variables
+@import 'variables';
+
+$fa-font-path: "../webfonts";
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+
+// Font Awesome
+@import '~@fortawesome/fontawesome-free/scss/fontawesome.scss';
+@import '~@fortawesome/fontawesome-free/scss/solid.scss';
+
+.m-20{
+    margin-bottom: 20px !important;
+}
+.img-med{
+    height: 350px !important;
+}
+.img-sm{
+    height: 250px !important;
+}
+.p-20{
+    padding: 20px !important;
+}
+.checked {
+    color: orange !important;
+  }
