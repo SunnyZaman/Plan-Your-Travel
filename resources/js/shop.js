@@ -55,6 +55,7 @@ $(document).ready(function () {
         
     $('#planButton').click(function(){
             var plan = $('#planTitle').text();
+            openMap();
             $.ajax({
                 url: "/shop/plan",
                 method: "GET",
@@ -119,4 +120,9 @@ $(document).ready(function () {
         return ageArray.toString();
         
     }
+
+    function openMap(){
+       $("#map-canvas").append('<iframe src="https://www.google.com/maps/d/u/1/embed?mid=1uTCt_nEfZ7D5ve3RZrv62yFKJgjhCX3O" width="100%" height="500px"></iframe>');
+    }
+    
 });
