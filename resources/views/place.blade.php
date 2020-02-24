@@ -1,8 +1,12 @@
 @extends('layouts.app')
+@push('scripts')
+<script type="text/javascript" src="{{asset('/js/reviews.js') }}" defer></script>
+@endpush
 @section('content')
 <div class="container">
+{{ csrf_field() }}
      @foreach($selected_place as $place)
-<h3>{{$place->selected_place}}</h3>
+<h3 id="selectedPlace">{{$place->selected_place}}</h3>
 <div class="form-row">
         <div class="form-group col-xs-12 col-md-4">
         <div class="card">
@@ -36,7 +40,12 @@
   Write a Review
 </button>
 <!-- Show Reviews -->
-
+<div class="form-row">
+        <div class="form-group col-xs-12 col-md-4">
+        <div class="card">
+        </div>
+        </div>
+    </div>
 <!-- Modal -->
 <div class="modal fade" id="reviewModal" tabindex="-1" role="dialog" aria-labelledby="writeReview" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
@@ -57,7 +66,7 @@
              <div class="form-group col-xs-12 col-md-4">
                     <label for="rating">Rating:</label>
                     <select name="rating" id="rating" class="form-control">
-                    @for ($i = 1; $i < 5; $i++)
+                    @for ($i = 1; $i <= 5; $i++)
                     <option value="{{ $i}}">{{ $i }}</option>
                     @endfor
                 </select>
