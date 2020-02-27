@@ -107,7 +107,7 @@ $(document).ready(function () {
 
     if (x <= maxInputs) {
       fieldCount++;
-      $(inputsWrapper).append('<div class="form-row"><div class="form-group col-xs-12 col-md-12">' + ' <label for="age_1">Age of traveler:</label>' + '<div class="input-group">' + '  <input class="form-control" type="text"  name"age_' + fieldCount + '" id="age_' + fieldCount + '" type="text" required>' + '<div class="input-group-append">' + '<button class="btn btn-outline-secondary removeclass" type="button">Remove</button>' + '</div>' + '</div>' + '</div></div>');
+      $(inputsWrapper).append('<div class="form-row"><div class="form-group col-xs-12 col-md-12">' + ' <label for="age_1">Age of traveler:</label>' + '<div class="input-group">' + '  <input class="form-control" type="text"  name"age_' + fieldCount + '" id="age_' + fieldCount + '" type="number" min="0" required>' + '<div class="input-group-append">' + '<button class="btn btn-outline-secondary removeclass" type="button">Remove</button>' + '</div>' + '</div>' + '</div></div>');
       x++;
       updateInvoice();
       $("#addInput").show(); // Delete the "add"-link if there is 3 fields.
