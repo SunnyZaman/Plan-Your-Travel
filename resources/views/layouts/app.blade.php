@@ -59,7 +59,7 @@
                             <a  class="nav-link" href="{{ route('about') }}" role="button">About</a>
                         </li>
                         <li class="nav-item">
-                            <a  class="nav-link" href="{{ route('about') }}" role="button">Contact</a>
+                            <a  class="nav-link" href="{{ route('contact') }}" role="button">Contact</a>
                         </li>
                         <li class="nav-item">
                         <a  class="nav-link" href="{{ route('shop') }}">

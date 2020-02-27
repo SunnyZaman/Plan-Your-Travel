@@ -37,6 +37,7 @@ Route::group(['middleware' => ['auth']], function() {
     Route::get('/shop', 'ShopController@index')->name('shop');
     Route::get('/shop/plan', 'ShopController@plan');
     Route::post('/shop/purchase', 'ShopController@purchase');
-    Route::get('/about', 'AboutController@index')->name('about');
+    Route::get('/about', 'TeamController@about')->name('about');
+    Route::get('/contact', 'TeamController@contact')->name('contact');
 
 });
