@@ -16803,3 +16803,7 @@ readers do not read off random characters that represent icons */
   color: orange !important;
 }
 
+.fa-user {
+  font-size: 11em !important;
+}
+
