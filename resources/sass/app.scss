@@ -31,3 +31,22 @@ $fa-font-path: "../webfonts";
   .fa-user{
     font-size:11em !important;
   }
+  .text-right{
+    text-align: right !important;
+  }
+  .search-dialog{
+    width: 60% !important;
+    position: absolute !important;
+    right: 5px !important;
+    margin-top: 5px !important;
+  }
+  .results-container{
+    margin-top: 10px;
+  }
+  .results-container .caption{
+
+      font-weight: 600 !important;
+  }
+  .results-container, #countryContainer, #attractionContainer, .imageContainer,  #planQuery, #invoice{
+    display: none;
+  }

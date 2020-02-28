@@ -15,4 +15,5 @@ mix.js('resources/js/app.js', 'public/js')
    .js('resources/js/dropdown.js', 'public/js')
    .js('resources/js/reviews.js', 'public/js')
    .js('resources/js/shop.js', 'public/js')
+   .js('resources/js/search.js', 'public/js')
    .sass('resources/sass/app.scss', 'public/css');

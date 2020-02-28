@@ -61,4 +61,16 @@ class HomeController extends Controller
         ->get();
         echo $data;
        }
+
+       function search(Request $request){
+        $search = $request->get('search');
+        $data = DB::table('attractions')
+        ->join('countries','country_id','country')
+        ->join('continents','continent_id','continent')
+            ->where('country', 'like', '%' . $search . '%') 
+            ->orWhere('continent', 'like', '%' . $search . '%')		
+            ->orWhere('attraction', 'like', '%' . $search . '%')				
+        ->get();
+        echo $data;
+       }
 }
