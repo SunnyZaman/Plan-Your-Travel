@@ -1,10 +1,15 @@
 @extends('layouts.app')
 @push('scripts')
 <script type="text/javascript" src="{{asset('/js/dropdown.js') }}" defer></script>
+<script type="text/javascript" src="{{asset('/js/search.js') }}" defer></script>
+
 @endpush
 
 @section('content')
 <div class="container">
+<div class="text-right">
+<button type="button" class="btn btn-dark" data-toggle="modal" data-target="#searchModal"><i class="fas fa-search"></i> Search</button>
+</div>
 <div class="form-row">
         <div class="form-group col-xs-12 col-md-4">
         <label for="continent">Continent:</label>
@@ -108,6 +113,70 @@
     </div>
     </div>
 
+<div class="results-container">
+<p class="caption">Results</p>
+<table class="table table-striped" id="results-table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Continent</th>
+      <th scope="col">Country</th>
+      <th scope="col">Attraction</th>
+      <th scope="col">Location</th>
+    </tr>
+  </thead>
+  <tbody id="results-tbody">
+    <!-- <tr>
+      <th scope="row">1</th>
+      <td>Mark</td>
+      <td>Otto</td>
+      <td>@mdo</td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td>Jacob</td>
+      <td>Thornton</td>
+      <td>@fat</td>
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td>Larry</td>
+      <td>the Bird</td>
+      <td>@twitter</td>
+    </tr> -->
+  </tbody>
+</table>
+</div>
+
+<!-- Modal -->
+<div class="modal fade"  id="searchModal" tabindex="-1" role="dialog" aria-labelledby="search" aria-hidden="true">
+  <div class="modal-dialog search-dialog" role="document">
+    <div class="modal-content">
+        <form id="searchForm" method="post">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Search</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="form-row">
+                <div class="form-group col-xs-12 col-md-12">
+                    <input class="form-control" name="search" id="search" type="text" required>
+             </div>
+             
+            </div>
+            
+        </div>
+          <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="submit" class="btn btn-primary">Search</button>
+            </div>  
+        </form>
+    </div>
+  </div>
+</div>
+<!--  -->
 </div>
 
 @endsection
