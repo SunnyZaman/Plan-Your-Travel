@@ -40,5 +40,12 @@ Route::group(['middleware' => ['auth']], function() {
     Route::post('/shop/purchase', 'ShopController@purchase');
     Route::get('/about', 'TeamController@about')->name('about');
     Route::get('/contact', 'TeamController@contact')->name('contact');
+    Route::get('/insert', 'MaintainController@insert')->name('insert');
+    Route::get('/select', 'MaintainController@select')->name('select');
+    Route::post('select/retrieve', 'MaintainController@retrieve');
+    Route::get('/update', 'MaintainController@update')->name('update');
+    Route::get('/delete', 'MaintainController@delete')->name('delete');
+    Route::post('delete/deleteRow', 'MaintainController@deleteRow');
+    Route::post('/table', 'MaintainController@table');
 
 });

@@ -17,7 +17,7 @@ class CreateCountriesTable extends Migration
             $table->engine = 'InnoDB'; // <- For string foreign keys
             $table->string('country')->primary();
             $table->string('continent_id');
-            $table->foreign('continent_id')->references('continent')->on('continents');
+            $table->foreign('continent_id')->references('continent')->on('continents')->onDelete('cascade');
             $table->timestamps();
         });
         DB::table('countries')->insert(array(
@@ -93,6 +93,7 @@ class CreateCountriesTable extends Migration
         Schema::dropIfExists('countries');
     }
 }
+
 
 
 

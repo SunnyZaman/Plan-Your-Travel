@@ -15,8 +15,8 @@ class CreatePlansTable extends Migration
     {
         Schema::create('plans', function (Blueprint $table) {
             $table->engine = 'InnoDB'; // <- For string foreign keys
-            $table->string('plan')->primary();
-            $table->string('user_email');
+            $table->string('user_email')->primary();
+            $table->string('plan');
             $table->foreign('user_email')->references('email')->on('users');
             $table->integer('number_of_travellers');
             $table->string('ages');

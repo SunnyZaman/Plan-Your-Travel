@@ -17,7 +17,7 @@ class CreateAttractionsTable extends Migration
             $table->bigIncrements('id');
             $table->string('attraction');
             $table->string('country_id');
-            $table->foreign('country_id')->references('country')->on('countries');
+            $table->foreign('country_id')->references('country')->on('countries')->onDelete('cascade');
             $table->text('attraction_data');
             $table->text('close_place_1_data');
             $table->text('close_place_2_data');
@@ -238,6 +238,7 @@ class CreateAttractionsTable extends Migration
         Schema::dropIfExists('attractions');
     }
 }
+
 
 
 
