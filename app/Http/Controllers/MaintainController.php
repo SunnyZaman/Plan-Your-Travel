@@ -36,14 +36,16 @@ class MaintainController extends Controller
     public function insert()
     {
         $tables = $this->getTables();
-        return view('dbMaintain.insert')->with(
-          ['tables'=> $tables]);
+        $query ="Insert";
+        return view('dbMaintain')->with(
+            ['tables'=> $tables,'query'=>$query]);
     }
     function select()
        {
         $tables = $this->getTables();
-        return view('dbMaintain.select')->with(
-            ['tables'=> $tables]);
+        $query ="Select";
+        return view('dbMaintain')->with(
+            ['tables'=> $tables,'query'=>$query]);
        }
        function retrieve(Request $request){
         $table = $request->get('table');
@@ -54,13 +56,27 @@ class MaintainController extends Controller
 
        function delete(){
         $tables = $this->getTables();
-        return view('dbMaintain.delete')->with(
-            ['tables'=> $tables]);
+        $query ="Delete";
+        return view('dbMaintain')->with(
+            ['tables'=> $tables,'query'=>$query]);
+       }
+       function deleteRow(Request $request){
+        $table = $request->get('table');
+        $column = $request->get('column');
+        $value = $request->get('value');
+        $data = DB::table($table)->where($column, '=', $value)->delete();
+        echo $data;
+       }
+       function table(Request $request){
+        $table = $request->get('table');
+        $result = DB::table($table)->get();  
+        echo $result;
        }
 
        function update(){
         $tables = $this->getTables();
-        return view('dbMaintain.update')->with(
-            ['tables'=> $tables]);
+        $query ="Update";
+        return view('dbMaintain')->with(
+            ['tables'=> $tables,'query'=>$query]);
        }
 }

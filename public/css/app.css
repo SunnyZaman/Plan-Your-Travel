@@ -16835,3 +16835,13 @@ readers do not read off random characters that represent icons */
   display: none;
 }
 
+#deleteIcon {
+  cursor: pointer;
+  color: #8a1104;
+}
+
+#deleteIcon:hover {
+  color: #363535;
+  transform: scale(1.5);
+}
+

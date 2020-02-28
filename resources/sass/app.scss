@@ -50,3 +50,11 @@ $fa-font-path: "../webfonts";
   .results-container, #countryContainer, #attractionContainer, .imageContainer,  #planQuery, #invoice{
     display: none;
   }
+  #deleteIcon{
+      cursor: pointer;
+      color:#8a1104;
+  }
+  #deleteIcon:hover{
+      color:#363535;
+      transform: scale(1.5);
+  }

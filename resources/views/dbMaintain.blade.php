@@ -4,7 +4,7 @@
 @endpush
 @section('content')
 <div class="container">
-    <h5 id="queryTitle">Select</h5>
+    <h5 id="queryTitle">{{$query}}</h5>
 <div class="form-row">
         <div class="form-group col-xs-12 col-md-4">
         <label for="table">Choose Table from Database:</label>

@@ -95,6 +95,7 @@
 
 $(document).ready(function () {
   var Fields = [];
+  var Columns = [];
   var queryTable = "";
   $('#table').on('change', function () {
     if (this.value !== "") {
@@ -237,7 +238,111 @@ $(document).ready(function () {
     $('#queryContainer').append(table);
   }
 
-  function deleteQuery(table) {}
+  function deleteQuery(table) {
+    var fields;
+
+    switch (table) {
+      case 'Continents':
+        fields = ['continent'];
+        break;
+
+      case 'Countries':
+        fields = ['continent_id', 'country'];
+        break;
+
+      case 'Attractions':
+        fields = ['country_id', 'attraction', 'location'];
+        break;
+
+      default:
+        break;
+    }
+
+    Columns = fields;
+
+    var _token = $('input[name="_token"]').val();
+
+    $.ajax({
+      url: "/table",
+      method: "POST",
+      data: {
+        table: queryTable,
+        _token: _token
+      },
+      success: function success(result) {
+        console.log(result);
+        var value = JSON.parse(result);
+        createDeleteTable(value);
+      },
+      error: function error(response) {
+        console.log(response);
+      }
+    });
+  }
+
+  function createDeleteTable(result) {
+    $("#selectTable").html("");
+    var table = '<table class="table table-striped" id="selectTable"><thead><tr>';
+    $.each(Columns, function (index, item) {
+      if (item === "location") {
+        table += '<th scope="col">Location</th>';
+      } else {
+        table += '<th scope="col">' + item + '</th>';
+      }
+    });
+    table += '</tr></thead><tbody>';
+    $.each(result, function (index, item) {
+      table += '<tr>';
+      $.each(Columns, function (index, head) {
+        console.log(head);
+        console.log(item);
+
+        if (head === "location") {
+          console.log(item);
+          var data = JSON.parse(item["attraction_data"]);
+          console.log(data);
+          table += '<td>' + data.location + '</td>';
+        } else {
+          table += '<td>' + item[head] + '</td>';
+        }
+      });
+      table += '<td><i class="fas fa-trash-alt ' + Columns[0] + ' ' + item[Columns[0]] + '" id="deleteIcon"></i></td>';
+      table += '</tr>';
+    });
+    table += '</tbody></table>';
+    $('#queryContainer').append(table);
+    document.getElementById("deleteIcon").addEventListener("click", deleteRecord, false);
+  }
+
+  function deleteRecord(event) {
+    console.log(event);
+    console.log($(this).attr('class'));
+    var id = $(this).attr('class').split("fas fa-trash-alt ")[1];
+    var column = id.split(" ")[0];
+    var value = id.split(" ")[1];
+    console.log(column);
+    console.log(value);
+    console.log(queryTable);
+
+    var _token = $('input[name="_token"]').val();
+
+    $.ajax({
+      url: "/delete/deleteRow",
+      method: "POST",
+      data: {
+        table: queryTable,
+        column: column,
+        value: value,
+        _token: _token
+      },
+      success: function success(result) {
+        console.log(result);
+      },
+      error: function error(response) {
+        console.log(response);
+      }
+    });
+  }
 });
 
 /***/ }),

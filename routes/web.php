@@ -45,5 +45,7 @@ Route::group(['middleware' => ['auth']], function() {
     Route::post('select/retrieve', 'MaintainController@retrieve');
     Route::get('/update', 'MaintainController@update')->name('update');
     Route::get('/delete', 'MaintainController@delete')->name('delete');
+    Route::post('delete/deleteRow', 'MaintainController@deleteRow');
+    Route::post('/table', 'MaintainController@table');
 
 });
