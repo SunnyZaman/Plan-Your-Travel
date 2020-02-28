@@ -52,6 +52,29 @@
                                 </li>
                             @endif
                         @else
+                        @if (Auth::user()->email==='admin@travel.com' )
+                            <li class="nav-item dropdown">
+
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    db Maintain <span class="caret"></span>
+                                </a>
+
+                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="{{ route('insert') }}">
+                                        Insert
+                                    </a>
+                                    <a class="dropdown-item" href="{{ route('select') }}">
+                                        Select
+                                    </a>
+                                    <a class="dropdown-item" href="{{ route('update') }}">
+                                        Update
+                                    </a>
+                                    <a class="dropdown-item" href="{{ route('delete') }}">
+                                        Delete
+                                    </a>
+                                </div>
+                            </li>
+                            @endif
                         <li class="nav-item">
                             <a  class="nav-link" href="{{ url('/') }}" role="button">Home</a>
                         </li>
@@ -83,6 +106,7 @@
                                     </form>
                                 </div>
                             </li>
+                           
                         @endguest
                     </ul>
                 </div>
